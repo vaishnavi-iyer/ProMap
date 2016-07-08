@@ -1,0 +1,31 @@
+{
+  "name": "ProMap",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "tape test/tape/db-integrationTests.js | tap-spec"
+  },
+  "dependencies": {
+    "basic-auth-connect": "^1.0.0",
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "dotenv": "^2.0.0",
+    "express": "~4.13.4",
+    "hbs": "~4.0.0",
+    "https": "^1.0.0",
+    "knex": "^0.11.7",
+    "morgan": "~1.7.0",
+    "nodemon": "^1.9.2",
+    "pem": "^1.8.3",
+    "pg": "^6.0.1",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "redtape": "^1.0.0",
+    "supertest": "^1.2.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.4.0"
+  }
+}
