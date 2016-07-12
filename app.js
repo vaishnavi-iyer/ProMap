@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var dbConfig = require('./database/db-config')
 var db = require('./database/db-utils')(dbConfig.db);
 
-var index = require('./routes/index');
+var home = require('./routes/home');
 var users = require('./routes/users');
 var projects = require('./routes/projects');
 
@@ -18,7 +18,7 @@ var app = express();
 app.use(express.static(path.join(__dirname,'/public'))) // sets the public folder as a static path and hence for all images use relative path wrt public
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('/views', path.join(__dirname, '/views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/', home);
 app.use('/users', users);
 app.use('/api/v1/projects', projects);
 

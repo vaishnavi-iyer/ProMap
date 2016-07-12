@@ -11,7 +11,7 @@ obj.img2 = '/images/projects.jpg'
  
 router.get('/', function(req, res, next) {
 	console.log(obj)
-  res.render('index', obj);
+  res.render('home', obj);
 });
 
 module.exports = router;

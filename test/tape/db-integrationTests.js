@@ -6,7 +6,6 @@ var knex = dbConfig.db
 
 
 var project = {
-  id: 1,
   name: 'Personal Project',
   description: 'I am making a project Management App'
 }
@@ -101,8 +100,7 @@ test('delete the artist on id', function (t) {
 // POST /api/vi/projects
 var newProject = {
   name: 'Racer Game',
-  description: 'Car racing',
-  id:2
+  description: 'Car racing'
 }
 
 test('post creates an artist', function (t){
@@ -119,7 +117,7 @@ test('post creates an artist', function (t){
         .expect(200)
         .end(function (err, res) {
           t.equal(res.body.length, 2)
-          t.deepEqual(newProject,res.body[1], 'objects are equal')
+          t.equal(newProject.name,res.body[1].name, 'objects are equal')
           t.end()
         })
     })
