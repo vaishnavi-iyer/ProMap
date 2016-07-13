@@ -11,14 +11,14 @@ import reducer from './reducer'
 import App from './components/app.jsx'
 
 const logger = createLogger()
-const store = createStore(
-  combineReducers({
-    reducer,
-    routing: routerReducer
-  }),
-  applyMiddleware(logger, thunk)
-)
-// const store = createStore(reducer, applyMiddleware(logger, thunk))
+// const store = createStore(
+//   combineReducers({
+//     reducer,
+//     routing: routerReducer
+//   }),
+//   applyMiddleware(logger, thunk)
+// )
+const store = createStore(reducer, applyMiddleware(logger, thunk))
 // const history = syncHistoryWithStore(browserHistory, store)
 
 render(

@@ -10,8 +10,7 @@ const Users = (props) => (
       Moar
     </button>
     <div className='user-list'>
-    {props.users.map((user, index)=>{return <div key={index}>{user.name}</div>})}
-
+      {props.users.map((user, index)=>{return <div key={index}>{user.name}</div>})}
     </div>
   </div>
 )
@@ -29,7 +28,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 
 }
-
 
 export default connect(
   mapStateToProps,
