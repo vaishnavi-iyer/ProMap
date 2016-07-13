@@ -1,25 +1,31 @@
+const INITIAL_STATE ={
 
-export default (state = {users: [], tasks: []}, action) => {
-  let newState = state
+}
+
+export default (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
-    case 'ADD USER':
-      newState.users.push({ name: action.name, happiness: 0 })
+    case 'GET_USERS':
+      const newState = Object.assign({}, state, {
+          users: action.users
+        })
+        console.log('newState', newState)
       return newState
 
-    case 'DELETE USER':
-      newState.users.splice(action.index, 1)
+    case 'DELETE_USER':
+
       return newState
 
-    case 'ADD TASK':
-      newState.tasks.push({ name: action.name })
+    case 'ADD_TASK':
+
       return newState
 
-    case 'DELETE TASK':
-      newState.tasks.splice(action.index, 1)
+    case 'DELETE_TASK':
+
       return newState
 
     default:
       return state
   }
 }
+

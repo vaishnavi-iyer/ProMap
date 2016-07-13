@@ -1,46 +1,29 @@
-// console.log('Hello World!')
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-// import { createStore } from 'redux'
-// import reducer from './reducer'
-// import addForm from './components/addForm.js'
-// import xhr from 'xhr'
-// import home from './views/home.hbs'
+console.log('Hello World!- In Index.js')
+import React from 'react'
+import { render } from 'react-dom'
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import createLogger from 'redux-logger';
+import {Provider} from 'react-redux';
+import thunk from 'redux-thunk'
 
-// var obj = { }
+import reducer from './reducer'
+import App from './components/app.jsx'
 
-// obj.title = 'ProMap'
-// obj.img1 = '/images/users.jpeg'
-// obj.img2 = '/images/projects.jpg'
+const logger = createLogger()
+const store = createStore(
+  combineReducers({
+    reducer,
+    routing: routerReducer
+  }),
+  applyMiddleware(logger, thunk)
+)
+// const store = createStore(reducer, applyMiddleware(logger, thunk))
+// const history = syncHistoryWithStore(browserHistory, store)
 
-// xhr.get('/api/v1/projects', function(err, data){
-// if (err){
-//   console.log(err)
-// }
-
-// // Replace 'Space' below with the response
-// var newdata = JSON.parse(data.body)
-// for (var key in newdata){
-//   var target = document.getElementsByTagName('main')[0]
-//   target.innerHTML += home({
-//     name:  key + ' : ' + newdata[key],
-//     extra: 'Hello'
-//   })
-// }
-
-
-// // document.querySelector('main').innerHTML = home(obj)
-// const render = () => {
-//   ReactDOM.render(
-//     <addForm />,
-//     document.querySelector('.main')
-//   )
-// }
-
-// const store = createStore(reducer)
-
-// // store.subscribe(render)
-// render() // to render it first time
-
-
-
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+)

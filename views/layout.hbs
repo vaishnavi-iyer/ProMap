@@ -8,11 +8,26 @@
 
  	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    {{{body}}}
+    <div id="title">
+      <h1>ProMap</h1>
+      <p>Tag Line XXXXXXXXXXXXXX</p>
+    </div>
+    <div id="app">
+        <div id="navbar">
+          <div><NavLink to='/' onlyActiveOnIndex> <h3> Home </h3> </NavLink> </div>
+          <div><NavLink to='/users'> <h3> Users </h3> </NavLink> </div>
+          <div><NavLink to='/projects'> <h3> Projects </h3> </NavLink> </div>
+          <div><NavLink to='/about'> <h3> About </h3> </NavLink> </div>
+        </div>
+        <div id="main">
+          {{{body}}}
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,15 +1,14 @@
-
 var express = require('express');
 var router = express.Router();
 
 var dbConfig = require('../database/db-config')
 var db = require('../database/db-utils')(dbConfig.db);
-
-
+/* GET projects listing. */
 
 router.get('/', function (req, res, next) {
   db.getAll('projects', function (err, projects) {
     if(err) console.log(err);
+    console.log(projects,'projects')
     res.json(projects)
   })
 })

@@ -8,7 +8,9 @@ var db = require('../database/db-utils')(dbConfig.db);
 router.get('/', function (req, res, next) {
   db.getAll('users', function (err, users) {
     if(err) console.log(err);
+    console.log(users, 'in route')
     res.json(users)
+    // res.render('users', users)
   })
 })
 

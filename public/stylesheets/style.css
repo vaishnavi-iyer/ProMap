@@ -1,4 +1,9 @@
+*{
+  border: 1px solid red;
+}
 body {
+  background:url("../images/tile.jpg");
+  background-size: 25em;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -10,4 +15,23 @@ a {
 .home{
 	height: 100px;
 	width:100px;
+}
+#app{
+  width:100%;
+  display: float;
+}
+#navbar{
+  width:30%;
+  float:left;
+}
+#main{
+  width:69%;
+  float:left;
+}
+
+h3{
+  color: black;
+}
+.active {
+  color: green;
 }
