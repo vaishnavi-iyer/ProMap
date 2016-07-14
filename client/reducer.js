@@ -9,15 +9,13 @@ export default (state = INITIAL_STATE, action) => {
       let newState = Object.assign({}, state, {
           users: action.users
         })
-        console.log('newState', newState)
       return newState
 
     case 'GET_PROJECTS':
       let newS = Object.assign({}, state, {
           projects: action.projects
         })
-        console.log('newState', newS)
-      return newSt
+      return newS
 
     case 'DELETE_USER':
 

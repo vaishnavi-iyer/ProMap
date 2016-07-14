@@ -1,5 +1,4 @@
 import React from 'react'
-import { render } from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import About from './about.jsx'
 import Home from './home.jsx'

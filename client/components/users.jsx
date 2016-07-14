@@ -4,11 +4,7 @@ import * as actions from '../actions'
 
 const Users = (props) => (
   <div className='users'>
-    <button onClick={ () => {
-      props.requestData('users')
-    }}>
-      Moar
-    </button>
+    props.requestUserData('users')
     <div className='user-list'>
       {props.users.map((user, index)=>{return <div key={index}>{user.name}</div>})}
     </div>
@@ -24,7 +20,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    requestData: (query) => { dispatch(actions.requestData(query)) }
+    requestUserData: (query) => { dispatch(actions.requestUserData(query)) }
   }
 
 }
