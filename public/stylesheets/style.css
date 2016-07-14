@@ -1,6 +1,6 @@
-*{
+/**{
   border: 1px solid red;
-}
+}*/
 body {
   background:url("../images/tile.jpg");
   background-size: 25em;
